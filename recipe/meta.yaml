@@ -1,5 +1,5 @@
 {% set name = "nb-clean" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2ee63f32ebc69bafe9ac65436e6e366fca69c3a7ee4b5bf577de2d5a7de48f6c
+  sha256: 39f69f705ceb7a58f90b89cb63e8c895ecbd9b9bae941dc35338cd371a819a8d
 
 build:
   entry_points:
