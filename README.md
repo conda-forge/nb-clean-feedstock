@@ -7,7 +7,10 @@ Home: https://github.com/srstevenson/nb-clean
 
 Package license: ISC
 
-Summary: Clean Jupyter notebooks for versioning
+Summary: Clean Jupyter notebooks for version control
+
+Clean Jupyter notebooks for version control. Remove metadata, outputs, and execution counts with Git and pre-commit support.
+
 
 Current build status
 ====================
