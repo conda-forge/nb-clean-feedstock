@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: f4af1bec3f25e7b18eb09024947bcc809efc97fd68bec482d219c304d850809f
 
 build:
@@ -14,16 +14,16 @@ build:
     - nb-clean = nb_clean.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.9,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.0.0
   run:
     - nbformat >=5.9.2,<6.0.0
-    - python >=3.9,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   imports:
@@ -33,6 +33,7 @@ test:
     - nb-clean --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/srstevenson/nb-clean
